@@ -9,15 +9,15 @@
 <div class="container">
     <div class="content">
         <div class="image">
-            <img src="http://www.gravatar.com/avatar/{{ md5("hello@laravel-news.com") }}?s=200" />
+{{--            <img src="http://www.gravatar.com/avatar/{{ md5("hello@laravel-news.com") }}?s=200" />--}}
         </div>
-        <h1>Laravel News</h1>
+        <h1>Nathan Brace</h1>
 
         @if (! $amount)
             <form action="/donate" method="get">
                 <div class="form-item">
                     <label for="amount">Amount:</label>
-                    <input type="text" name="amount" value="200.00">
+                    <input type="text" name="amount" value="">
                 </div>
                 <p>
                 <button type="submit">
