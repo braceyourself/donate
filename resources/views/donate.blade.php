@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Laravel</title>
+    <title>Donate to Nathan Brace Campaign</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
     <link href="/css/style.css" rel="stylesheet" type="text/css">
 </head>
@@ -21,7 +21,7 @@
                 </div>
                 <p>
                 <button type="submit">
-                    <span style="display: block; min-height: 30px;">Continue</span>
+                    <span style="display: block; min-height: 30px;">Donate</span>
                 </button>
                 </p>
             </form>
@@ -33,7 +33,7 @@
                         src="https://checkout.stripe.com/checkout.js" class="stripe-button"
                         data-key="{{ config('services.stripe.key') }}"
                         data-amount="{{ $amount }}"
-                        data-name="Laravel News"
+                        data-name="Nathan Brace"
                         data-description="{{ $description or "Donation" }}"
                         {{--data-image="/128x128.png"--}}
                         data-locale="auto"
