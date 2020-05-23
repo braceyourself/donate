@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return redirect('/donate');
-});
+Route::get('/', 'Controller@index');
 
 /*
 |--------------------------------------------------------------------------
