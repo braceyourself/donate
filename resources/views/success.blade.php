@@ -13,7 +13,7 @@
         </div>
         <h1>Thank You!</h1>
 
-        <p>Your payment has been submitted. Thank you. </p>
+        <p>Your donation has been submitted. Thank you. </p>
     </div>
 </div>
 
