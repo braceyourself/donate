@@ -29,7 +29,7 @@
         <div class="image">
             {{--            <img src="http://www.gravatar.com/avatar/{{ md5("hello@laravel-news.com") }}?s=200" />--}}
         </div>
-        <h1>Nathan Brace</h1>
+        <h1>Support the Campaign</h1>
         @if (! $amount)
             <form action="/donate" method="get">
                 <div class="form-item">
