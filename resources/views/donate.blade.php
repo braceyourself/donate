@@ -94,8 +94,8 @@
             console.log(paymentMethod)
             axios.post('/donate', {
                 'payment_method': paymentMethod.id,
-                'name': cardHolderName.innerText,
-                'email': cardHolderEmail.innerText,
+                'name': cardHolderName.value,
+                'email': cardHolderEmail.value,
             }).then(function (response) {
                 window.location.href = "/success";
             }).catch(function (response) {
