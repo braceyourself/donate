@@ -31,22 +31,11 @@
         </div>
         <h1>Nathan Brace</h1>
         @if (! $amount)
-            <form action="/donate" method="get">
-                <div class="form-item">
-                    <label for="amount">Amount:</label>
-                    <input type="number" name="amount" placeholder="Enter a donation..." required>
-                </div>
-                <p>
-                    <button type="submit">
-                        <span style="display: block; min-height: 30px;">Donate</span>
-                    </button>
-                </p>
-            </form>
         @else
             <div class="fields">
                 <label for="name">Name</label>
                 <input name="name" id="card-holder-name" type="text">
-            </div>
+            </div> amount
 
             <div id="card-element"></div>
 
@@ -78,8 +67,7 @@
         );
 
         if (error) {
-            alert(error)
-            // Display "error.message" to the user...
+            alert(error.message);
         } else {
             console.log(paymentMethod)
             axios.post('/donate', {
