@@ -34,7 +34,7 @@
             <form action="/donate" method="get">
                 <div class="form-item">
                     <label for="amount">Amount:</label>
-                    <input type="number" name="amount" placeholder="$100" required>
+                    <input type="number" name="amount" placeholder="Enter a donation..." required>
                 </div>
                 <p>
                     <button type="submit">
