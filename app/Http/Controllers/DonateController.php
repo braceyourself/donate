@@ -23,33 +23,36 @@ class DonateController extends Controller
 
     public function submit(Request $request)
     {
+        /** @var  User $user */
+        $user = User::firstOrCreate([
+            'name' => $request->name,
+        ], [
+            'email' => $request->email,
+            'password' => bcrypt(config('app.key'))
+        ]);
+
         try {
-            $payment = (new User)->charge(100, $request->payment_method);
+            $payment = $user->charge(100, $request->payment_method, [
+                'receipt_email' => 'jenny.rosen@example.com',
+            ]);
         } catch (Exception $e) {
+
             \Illuminate\Support\Facades\Notification::send([
                 new User([
                     'name' => 'ethan',
                     'email' => 'ethanabrace@gmail.com'
                 ])
             ], new PaymentErrorNotification($e));
+
             return response([
                 'message' => $e->getMessage()
             ]);
         }
 
+
         return response([
             'message' => "Thank you for your donation!"
         ]);
-    }
-
-    protected function success()
-    {
-        return view('success');
-    }
-
-    protected function error()
-    {
-        return view('error');
     }
 
 }

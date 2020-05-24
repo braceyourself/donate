@@ -45,8 +45,11 @@
         @else
             <div class="fields">
                 <label for="name">Name</label>
-                <input name="name" id="card-holder-name" type="text">
-            </div> amount
+                <input name="name" id="card-holder-name" type="text" required>
+
+                <label for="email">Email (For Receipt)</label>
+                <input name="email" id="card-holder-email" type="text">
+            </div>
 
             <div id="card-element"></div>
 
@@ -54,6 +57,7 @@
                 <button id="card-button" class="btn btn-primary">
                     Submit
                 </button>
+                <span>Payments arek</span>
             </div>
         @endif
     </div>
@@ -78,6 +82,7 @@
         );
 
         if (error) {
+            cardButton.innerText = 'Submit'
             alert(error.message)
         } else {
             console.log(paymentMethod)

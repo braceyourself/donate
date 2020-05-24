@@ -14,4 +14,14 @@ class Controller extends BaseController
     {
         return redirect('/donate');
     }
+
+    protected function success()
+    {
+        return view('success');
+    }
+
+    protected function error()
+    {
+        return view('error');
+    }
 }
