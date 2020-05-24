@@ -18,7 +18,7 @@
             display: flex;
             flex-direction: column;
             text-align: start;
-            padding-bottom:10px;
+            padding-bottom: 10px;
         }
 
     </style>
@@ -53,11 +53,16 @@
 
             <div id="card-element"></div>
 
-            <div style="display: flex" class="pt-4">
+            <div style="display: flex;justify-content: space-between;" class="pt-4">
+
                 <button id="card-button" class="btn btn-primary">
                     Submit
                 </button>
-                <span>Payments arek</span>
+
+                <img src="/images/powered_by_stripe.png"
+                     style="height: 25px;"
+                     alt="powered by stripe">
+
             </div>
         @endif
     </div>
