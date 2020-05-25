@@ -32,7 +32,7 @@ class DonateController extends Controller
         ]);
 
         try {
-            $payment = $user->charge(100, $request->payment_method, [
+            $payment = $user->charge($request->amount, $request->payment_method, [
                 'receipt_email' => $user->email,
             ]);
         } catch (Exception $e) {

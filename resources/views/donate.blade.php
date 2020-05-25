@@ -43,6 +43,7 @@
                 </p>
             </form>
         @else
+            <input type="hidden" value="{{$amount}}" id="donation-amount">
             <div class="fields">
                 <label for="name">Name</label>
                 <input name="name" id="card-holder-name" type="text" required>
@@ -56,7 +57,7 @@
             <div style="display: flex;justify-content: space-between;" class="pt-4">
 
                 <button id="card-button" class="btn btn-primary">
-                    Submit
+                    Donate ${{$amount / 100}}
                 </button>
 
                 <img src="/images/powered_by_stripe.png"
@@ -75,6 +76,8 @@
     const cardHolderName = document.getElementById('card-holder-name');
     const cardButton = document.getElementById('card-button');
     const cardHolderEmail = document.getElementById('card-holder-email');
+    const amountElement = document.getElementById('donation-amount');
+
 
     cardElement.mount('#card-element');
 
@@ -94,6 +97,7 @@
             console.log(paymentMethod)
             axios.post('/donate', {
                 'payment_method': paymentMethod.id,
+                'amount': amountElement.value,
                 'name': cardHolderName.value,
                 'email': cardHolderEmail.value,
             }).then(function (response) {
